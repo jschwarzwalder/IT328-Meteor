@@ -6,8 +6,13 @@
   <h1>Welcome to my IT328 Chat App! </h1>
 
   {{> addMessage}}
+ 
   {{> messages}}
 </body>
+<template name="hello">
+  <button>Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
+</template>
 
 <template name="addMessage">
   <div>
@@ -26,6 +31,6 @@
 	<!-- for each loop -->
 	{{#each getMessages}}
 		<hr>
-		{{poster}} : {{message}}
+		{{poster}} says: {{message}}
 	{{/each}}
 </template>
