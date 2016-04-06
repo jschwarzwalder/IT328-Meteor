@@ -12,10 +12,11 @@ Template.messages.onCreated(function messagesOnCreated(){
 	]);
 });
 
-Template.messages.helpers({
-	getMessages: function () {
-		return Session.get("messagesData");
-	}
-});
+var messagesHelper = {
+	getMessages = function(){
+	return Session.get("messagesData");
+	};
+};
+Template.messages.helpers(messagesHelper);
 
 
