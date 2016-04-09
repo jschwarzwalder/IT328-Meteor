@@ -1,0 +1,20 @@
+/* 
+	Jami Schwarzwalder
+	4/8/2016
+	Meteor in Action 
+	Chapter 2
+	My Fridge Application
+ */
+.container{
+ width: 95%;
+ position: relative;
+}
+.left{
+ float: left;
+ width: 60%;
+ margin-right: 2%;
+}
+.right{
+ float: right;
+ width: 37%;
+}
