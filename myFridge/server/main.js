@@ -1,4 +1,11 @@
-import { Meteor } from 'meteor/meteor';
+/* 
+	Jami Schwarzwalder
+	4/8/2016
+	Meteor in Action 
+	Chapter 2
+	My Fridge Application
+ */
+ import { Meteor } from 'meteor/meteor';
 
 Meteor.startup(() => {
   // code to run on server at startup
