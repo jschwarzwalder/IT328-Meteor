@@ -6,25 +6,23 @@
 	My Fridge Application
  */
  
-import { Template } from 'meteor/templating';
-import { ReactiveVar } from 'meteor/reactive-var';
-
-import './main.html';
-
-Template.hello.onCreated(function helloOnCreated() {
-  // counter starts at 0
-  this.counter = new ReactiveVar(0);
-});
-
-Template.hello.helpers({
-  counter() {
-    return Template.instance().counter.get();
-  },
-});
-
-Template.hello.events({
-  'click button'(event, instance) {
-    // increment the counter when button is clicked
-    instance.counter.set(instance.counter.get() + 1);
-  },
-});
+Products = new Mongo.Collection('products');
+if (Meteor.isClient) {
+	 Template.fridge.helpers({
+		 products: function () {
+			 return Products.find({
+				place: 'fridge'
+			 });
+		 }
+	});
+	Template.productList.helpers({
+		 products: function () {
+			 return Products.find({
+				place: 'supermarket'
+			 });
+		 }
+	})
+}
+if (Meteor.isServer) {
+ //...
+}
