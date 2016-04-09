@@ -10,10 +10,18 @@
 	</div>
 	<div class="row">
 		<div class="col-xs-12 col-md-6">
-			{{> hello}}
+			<div class="panel panel-default">
+				<div class="panel-body text-center">
+				{{> hello}}
+				</div>
+			</div>
 		</div>
 		<div class="col-xs-12 col-md-6">
-			{{> info}}
+			<div class="panel panel-default">
+				<div class="panel-body">
+					{{> info}}
+				</div>
+			</div>					
 		</div>
 	</div>
 </div>
@@ -21,7 +29,7 @@
 </body>
 
 <template name="hello">
-  <button>Click Me</button>
+  <button class="btn btn-primary">Click Me</button>
   <p>You've pressed the button {{counter}} times.</p>
 </template>
 
