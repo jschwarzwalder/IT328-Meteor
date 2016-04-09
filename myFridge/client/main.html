@@ -23,11 +23,16 @@
 </template>
 <template name="fridge">
 	 <div id="fridge">
-	 fridge
+	 <img class="image-responsive" src="/img/empty-fridge.jpg" />
+	 
 	 </div>
 </template>
 <template name="productList">
-	 <div id="supermarket" class="box">
-	 supermarket
+	  <div id="supermarket" class="box">
+		 <ul id="products">
+			 {{#each products}}
+				<li>{{> productListItem}}</li>
+			 {{/each}}
+		 </ul>
 	 </div>
 </template>
