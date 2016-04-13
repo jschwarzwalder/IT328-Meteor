@@ -12,8 +12,8 @@ Template.addMessageForm.onCreated(function() {
 	
 	//save some initial data for our messaging application
 	
-	Session.setDefault(", ");
-	
+	Session.setDefault('messages', []);
+	Session.setDefault('searchResults', []);
 	
 	console.log("onCreated() has been called")
 });
