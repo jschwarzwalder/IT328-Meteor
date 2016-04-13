@@ -79,4 +79,5 @@ Template.addMessageForm.helpers({
 //global helpers
 Template.registerHelper('messagesExist', function{
 	return Session.get('messages').length > 0;
+	
 });

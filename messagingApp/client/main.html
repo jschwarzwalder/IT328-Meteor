@@ -47,8 +47,8 @@
 
 <template name="messageList">
 	<ul class="list-group">
-		{{#each allMessages}}
-			<li class="list-group-item">{{postedOn}}: {{messageText}}</li>
+		{{#each message in allMessages}}
+			<li class="list-group-item">{{message.postedOn}}: {{message.messageText}}</li>
 		{{/each}}
 	</ul>
 </template>
