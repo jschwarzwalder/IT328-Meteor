@@ -37,3 +37,9 @@ Template.addMessageForm.onDestroyed(function(){
 	*/
 	
 });
+
+Template.addMessageForm.events({
+	'submit .newMessage': function(){
+		
+	}
+})
