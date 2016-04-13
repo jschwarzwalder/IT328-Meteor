@@ -10,13 +10,26 @@ Template.addMessageForm.onCreated(function() {
 		Template instance accessible, not visible
 	*/
 	
-	console.log("onCreated has been called")
+	console.log("onCreated() has been called")
 });
 
 Template.addMessageForm.onRendered(function(){
+	/*
+		Used to initiate objects that are already in the DOM
+		(jQuery UI)
+		event to respond once elements have been built
+		
+		Template instance accessible, visible
+	*/
 	
+	console.log("onRendered() has been called")
 });
 
 Template.addMessageForm.onDestroyed(function(){
+	/*
+		Used to clean up after a template is no longer used
+		
+		Template instance not accessible, not visible
+	*/
 	
 });
