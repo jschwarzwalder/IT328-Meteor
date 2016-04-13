@@ -30,10 +30,15 @@
 			</form>
 		</div>
 		<div class="panel-body">
-			<!-- include the name of a helper -->
-			<h3>{{{totalMessagesHeader}}}</h3>
-			<!-- message list -->
-			{{> messageList}}
+			{{#if messagesExist}}
+				
+				<!-- include the name of a helper -->
+				<h3>{{{totalMessagesHeader}}}</h3>
+				<!-- message list -->
+				{{> messageList}}
+			{{else}}
+				<h3>No messages yet...</h3>
+			{{/if}}
 			
 		</div>
 	</div>
