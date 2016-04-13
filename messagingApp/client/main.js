@@ -65,3 +65,13 @@ Template.messageList.helpers({
 		return Session.get('messages');
 	}
 });
+
+Template.addMessageForm.helpers({
+	totalMessages: fucntion() {
+		return Session.get('messages').length;
+	},
+	totalMessagesHeader: fucntion(){
+		return 'Your total number of messages is <strong>' +
+			return Session.get('messages').length + '</strong>';
+	}
+});
