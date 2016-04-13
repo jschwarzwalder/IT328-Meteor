@@ -44,7 +44,7 @@ Template.addMessageForm.events({
 		event.preventDefault();
 		
 		//get our form value (message text)
-		var messageText = $('messageText').val();
+		var messageText = $('#messageText').val();
 		$('#messageText').val('');//clearing text box so you can type in new message
 		
 		//get our data source (from session)
@@ -54,6 +54,14 @@ Template.addMessageForm.events({
 		messages.push({
 			messageText: messageText ,
 			postedOn: new Date()
-		})
+		});
+		
+		Session.set('messages', messages);
+	}
+});
+
+Template.messageList.helpers({
+	allMessages: fucntion() {
+		return Session.get('messages');
 	}
 });
