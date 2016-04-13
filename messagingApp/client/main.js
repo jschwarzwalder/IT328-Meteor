@@ -10,14 +10,18 @@ Template.addMessageForm.onCreated(function() {
 		Template instance accessible, not visible
 	*/
 	
+	//save some initial data for our messaging application
+	
+	Session.setDefault(", ");
+	
+	
 	console.log("onCreated() has been called")
 });
 
 Template.addMessageForm.onRendered(function(){
 	/*
 		Used to initiate objects that are already in the DOM
-		(jQuery UI)
-		event to respond once elements have been built
+		(jQuery UI) -- event to respond once elements have been built
 		
 		Template instance accessible, visible
 	*/
