@@ -34,3 +34,29 @@
 		<li class="list-group-item">c</li>
 	</ul>
 </template>
+
+<template name="messageSearch">
+	<div class="panel panel-info">
+		<div class="panel-heading">
+			<!-- form for entering messages -->
+			<div class="form-group">
+				<label for="searchText">Search:</label>
+				<input type="text" id="searchText" class="form-control">
+			</div>
+		</div>
+		<div class="panel-body">
+			<!-- message list -->
+			{{> searchResults}}
+			
+		</div>
+	</div>
+ 
+</template>
+
+<template name="searchResults">
+	<ul class="list-group">
+		<li class="list-group-item">a</li>
+		<li class="list-group-item">b</li>
+		<li class="list-group-item">c</li>
+	</ul>
+</template>
