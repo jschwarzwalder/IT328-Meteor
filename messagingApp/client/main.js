@@ -72,6 +72,6 @@ Template.addMessageForm.helpers({
 	},
 	totalMessagesHeader: function(){
 		return 'Your total number of messages is <strong>' +
-			return Session.get('messages').length + '</strong>';
+			 Session.get('messages').length + '</strong>';
 	}
 });
