@@ -53,7 +53,7 @@ Template.addMessageForm.events({
 		//save our message
 		messages.push({
 			messageText: messageText ,
-			postedOn: new Date().toString()
+			postedOn: new Date().toDateString()
 		});
 		
 		Session.set('messages', messages);
@@ -77,7 +77,7 @@ Template.addMessageForm.helpers({
 });
 
 //global helpers
-Template.registerHelper('messagesExist', function{
+Template.registerHelper('messagesExist', function(){
 	return Session.get('messages').length > 0;
 	
 });
