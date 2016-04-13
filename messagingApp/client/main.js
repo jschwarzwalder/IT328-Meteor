@@ -53,7 +53,7 @@ Template.addMessageForm.events({
 		//save our message
 		messages.push({
 			messageText: messageText ,
-			postedOn: new Date()
+			postedOn: new Date().toString()
 		});
 		
 		Session.set('messages', messages);
@@ -61,13 +61,13 @@ Template.addMessageForm.events({
 });
 
 Template.messageList.helpers({
-	allMessages: fucntion() {
+	allMessages: function() {
 		return Session.get('messages');
 	}
 });
 
 Template.addMessageForm.helpers({
-	totalMessages: fucntion() {
+	totalMessages: function() {
 		return Session.get('messages').length;
 	},
 	totalMessagesHeader: fucntion(){
