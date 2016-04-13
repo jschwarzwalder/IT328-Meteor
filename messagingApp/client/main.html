@@ -6,7 +6,7 @@
   <h1>Messaging App</h1>
 
   {{> addMessageForm}}
-  {{> messageList}}
+  
 </body>
 
 <template name="addMessageForm">
@@ -20,16 +20,17 @@
 		</div>
 		<div class="panel-body">
 			<!-- message list -->
-			<ul class="list-group">
-				<li class="list-group-item">a</li>
-				<li class="list-group-item">b</li>
-				<li class="list-group-item">c</li>
-			</ul>
+			{{> messageList}}
+			
 		</div>
 	</div>
  
 </template>
 
 <template name="messageList">
-  
+	<ul class="list-group">
+		<li class="list-group-item">a</li>
+		<li class="list-group-item">b</li>
+		<li class="list-group-item">c</li>
+	</ul>
 </template>
