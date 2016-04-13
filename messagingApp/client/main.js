@@ -42,5 +42,18 @@ Template.addMessageForm.events({
 	'submit .newMessage': function(event, template){
 		//prevent the form from refreshing the page
 		event.preventDefault();
+		
+		//get our form value (message text)
+		var messageText = $('messageText').val();
+		$('#messageText').val('');//clearing text box so you can type in new message
+		
+		//get our data source (from session)
+		var messages = Session.get('messages');
+		
+		//save our message
+		messages.push({
+			messageText: messageText ,
+			postedOn: new Date()
+		})
 	}
-})
+});
