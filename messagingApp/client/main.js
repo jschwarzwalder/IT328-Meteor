@@ -70,7 +70,7 @@ Template.addMessageForm.helpers({
 	totalMessages: function() {
 		return Session.get('messages').length;
 	},
-	totalMessagesHeader: fucntion(){
+	totalMessagesHeader: function(){
 		return 'Your total number of messages is <strong>' +
 			return Session.get('messages').length + '</strong>';
 	}
