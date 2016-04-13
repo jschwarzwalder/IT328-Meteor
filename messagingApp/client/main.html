@@ -38,14 +38,14 @@
 <template name="messageSearch">
 	<div class="panel panel-info">
 		<div class="panel-heading">
-			<!-- form for entering messages -->
+			<!-- form for entering search queries -->
 			<div class="form-group">
 				<label for="searchText">Search:</label>
 				<input type="text" id="searchText" class="form-control">
 			</div>
 		</div>
 		<div class="panel-body">
-			<!-- message list -->
+			<!-- list the results of our search-->
 			{{> searchResults}}
 			
 		</div>
@@ -55,8 +55,6 @@
 
 <template name="searchResults">
 	<ul class="list-group">
-		<li class="list-group-item">a</li>
-		<li class="list-group-item">b</li>
-		<li class="list-group-item">c</li>
+		<!--leave empty until we begin searching -->
 	</ul>
 </template>
