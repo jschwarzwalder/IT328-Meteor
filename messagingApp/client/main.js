@@ -3,7 +3,7 @@ import { ReactiveVar } from 'meteor/reactive-var';
 
 import './main.html';
 
-Template.templateName.onCreated(function() {
+Template.addMessageForm.onCreated(function() {
 	/* 
 		Called when inserting a template into the DOM.
 		Good for saving/loading values that will be used with a template.
@@ -11,4 +11,12 @@ Template.templateName.onCreated(function() {
 	*/
 	
 	console.log("onCreated has been called")
+});
+
+Template.addMessageForm.onRendered(function(){
+	
+});
+
+Template.addMessageForm.onDestroyed(function(){
+	
 });
