@@ -81,5 +81,8 @@ Session.set("product", products);
 Template.products.helpers({
 	product: function() {
 		return Session.get('product');
+	},
+	keyWords: function() {
+		return this.keywords;
 	}
 });

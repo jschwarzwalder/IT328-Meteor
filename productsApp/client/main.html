@@ -18,7 +18,7 @@
 
 <template name="navBar">
 	<nav class="navbar navbar-default">
-	  <div class="container-fluid">
+	 
 		<div class="navbar-header">
 		  <a class="navbar-brand" href="#">Super Store</a>
 		</div>
@@ -27,30 +27,37 @@
 		  <li><a href="#">Search</a></li> 
 		  <li><a href="#">Cart</a></li> 
 		</ul>
-	  </div>
+	  
 	</nav>
 </template>
 
 <template name="home">
-	<div class="container-fluid">
+	
 		<div class="jumbotron">
 			<h1>My Store</h1>
 			<h2>Browse our items below...</h2>
 		</div>
-	</div>
+	
 </template>
 
 <template name="products">
-	<p>{{quantity}} total products</p>
-	{{#each product}}
-	<img src="{{image}}" class="img-responsive pull-right" />
-	<h4>{{this.productName}}</h4>
-	<p>{{this.productDescription}}</p>
-	<p>{{this.price}}</p>
-    <p>Keywords:  {{this.keyWords}} </p>
-    <button>Buy</button>    
 	
-	{{/each}}
-		
+		<p>{{quantity}} total products</p>
+		{{#each product}}
+		<div class="row">
+			<div class="col-xs-10 col-xs-offest-1 col-md-offest-2 col-md-8 ">
+				<h4>{{this.productName}}</h4>
+				<p>{{this.productDescription}}</p>
+				<p>Price: ${{this.price}}</p>
+				<p>Keywords:  {{#each keyWords}} {{this}}, {{/each}} </p>
+				<button>Buy</button>  
+			</div>
+			<div class="col-xs-2 col-xs-offest-1 col-md-offest-1 col-md-4 ">
+				<img src="{{image}}" height="100px"/>
+			</div>
+			<hr />
+		</div>
+		{{/each}}
+	
 </template>
 
