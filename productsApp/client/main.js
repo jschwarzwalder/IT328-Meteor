@@ -84,5 +84,8 @@ Template.products.helpers({
 	},
 	keyWords: function() {
 		return this.keywords;
+	},
+	totalProducts: function() {
+		return Session.get('product').length;
 	}
 });

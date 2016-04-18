@@ -42,11 +42,18 @@
 
 <template name="products">
 	
-		<p>{{quantity}} total products</p>
+		<h2 class="text-center">{{totalProducts}} total products</h2>
 		{{#each product}}
 		<div class="row">
 			<div class="col-xs-10 col-xs-offest-1 col-md-offest-2 col-md-8 ">
-				<h4>{{this.productName}}</h4>
+				<h4>{{this.productName}} (
+				{{#if gt this.quantity 0 }}
+					in-stock
+				{{else}}
+					out-of-stock
+				{{/if}} 
+				)
+				</h4>
 				<p>{{this.productDescription}}</p>
 				<p>Price: ${{this.price}}</p>
 				<p>Keywords:  {{#each keyWords}} {{this}}, {{/each}} </p>
@@ -55,8 +62,8 @@
 			<div class="col-xs-2 col-xs-offest-1 col-md-offest-1 col-md-4 ">
 				<img src="{{image}}" height="100px"/>
 			</div>
-			<hr />
 		</div>
+		<hr />
 		{{/each}}
 	
 </template>
