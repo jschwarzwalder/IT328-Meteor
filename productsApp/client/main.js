@@ -101,3 +101,17 @@ Template.products.helpers({
 		return false;
 	}
 });
+
+Template.salesItems.helpers({
+	sale: function(){
+		var saleList = [];
+		var product = Session.get('product');
+		for (var i=0; i < product.length; i++){
+			if (product[i].salesPrice != 0.0){
+				saleList.push(product[i].productName);
+				console.log(product[i].productName);
+			}
+		}
+		return saleList;
+	}
+});

@@ -8,12 +8,19 @@
 </head>
 
 <body>
-  <div class="container-fluid">
+	<div class="container-fluid">
 
-  {{> navBar}}
-  {{> home}}
-  {{> products}}
-  </div>
+		{{> navBar}}
+		{{> home}}
+		<div class="row">
+			<div class="col-md-10">
+			  {{> products}}
+			</div>
+			<div class="col-md-2">
+			  {{> salesItems}}
+			</div>
+		</div>
+	</div>
 </body>
 
 <template name="navBar">
@@ -76,5 +83,16 @@
 
 <template name="salePrice">
 	<span style="text-decoration:line-through">${{this.price}}</span> ${{this.salesPrice}}
+</template>
+
+<template name="salesItems">
+	
+		<h1>Sales!</h1>
+		<ul>
+		{{#each sale}}
+			<li>{{this}}</li>
+		{{/each}}
+		</ul>
+
 </template>
 
