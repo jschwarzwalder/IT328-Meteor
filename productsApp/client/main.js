@@ -87,5 +87,11 @@ Template.products.helpers({
 	},
 	totalProducts: function() {
 		return Session.get('product').length;
+	},
+	inStock: function(){
+		if (this.quantity > 0){
+			return true;
+		}
+		return false;
 	}
 });
