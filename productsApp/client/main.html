@@ -23,7 +23,7 @@
 		  <a class="navbar-brand" href="#">Super Store</a>
 		</div>
 		<ul class="nav navbar-nav">
-		  <li><a href="#" class="active">Home</a></li>
+		  <li class="active"><a href="#" >Home</a></li>
 		  <li><a href="#">Search</a></li> 
 		  <li><a href="#">Cart</a></li> 
 		</ul>
@@ -42,12 +42,12 @@
 
 <template name="products">
 	<p>{{quantity}} total products</p>
-	{{#each productId}}}
+	{{#each product}}
 	<img src="{{image}}" class="img-responsive pull-right" />
-	<h4>{{productName}}</h4>
-	<p>{{productDescription}}</p>
-	<p>{{price}}</p>
-    <p>Keywords:  {{keyWords}} </p>
+	<h4>{{this.productName}}</h4>
+	<p>{{this.productDescription}}</p>
+	<p>{{this.price}}</p>
+    <p>Keywords:  {{this.keyWords}} </p>
     <button>Buy</button>    
 	
 	{{/each}}

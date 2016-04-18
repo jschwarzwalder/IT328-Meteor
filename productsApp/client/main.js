@@ -77,3 +77,9 @@ var products = [
 ];
 
 Session.set("product", products);
+
+Template.products.helpers({
+	product: function() {
+		return Session.get('product');
+	}
+});
