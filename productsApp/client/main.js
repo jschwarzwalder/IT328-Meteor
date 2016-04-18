@@ -1,10 +1,16 @@
-
 import './main.html';
+
+function onSale() {
+	if (this.salesPrice == 0){
+		return false;
+	}
+	return true;
+}
 
 var products = [
     {
         productId: 0,
-        productName: "Harry Potter Returns to Hogwarts",
+        productName: "Harry Potter and the Sorcerer's Stone",
         productDescription: "Harry Potter is just a regular boy, or is he? He is about \
                              to embark on a wonderful and magical adventure at Hogwarts \
                              School of Witchcraft and Wizardry. ",
@@ -12,19 +18,22 @@ var products = [
         image: "harrypotter.jpg",
         keywords: ["children", "books", "fantasy"],
         price: 19.99,
-        salesPrice: 0.0
+        salesPrice: 0.0,
+		onSale: onSale
+		
     }, 
     {
         productId: 1,
         productName: "Barbie Birthday Doll",
-        productDescription: "The perfect gift for any girl during her birthday. Sparkling \
+        productDescription: "The perfect gift for any child during his birthday. Sparkling \
                              and beautiful, Barbie is now a modern girl. Arrange her hair, \
-                             change her make-up or pick one of several outfits.",
+                             change her make-up, hack a computer, or pick one of several outfits.",
         quantity: 80,
         image: "barbie.jpg",
         keywords: ["children", "dolls", "barbie"],
         price: 9.99,
-        salesPrice: 6.99
+        salesPrice: 6.99,
+		onSale: onSale
     }, 
     {
         productId: 2,
@@ -36,7 +45,8 @@ var products = [
         image: "iphone.jpg",
         keywords: ["phone", "Apple", "iPhone", "smart phone"],
         price: 199.99,
-        salesPrice: 179.99
+        salesPrice: 179.99,
+		onSale: onSale
     },
     {
         productId: 3,
@@ -48,7 +58,8 @@ var products = [
         image: "basketball.png",
         keywords: ["basketball", "sports", "NBA"],
         price: 19.99,
-        salesPrice: 14.99
+        salesPrice: 14.99,
+		onSale: onSale
     },
     {
         productId: 4,
@@ -60,6 +71,9 @@ var products = [
         image: "poster.jpg",
         keywords: ["vacation", "sunny", "beach", "poster", "colorful"],
         price: 4.99,
-        salesPrice: 0
+        salesPrice: 0,
+		onSale: onSale
     },
 ];
+
+Session.set("product", products);
