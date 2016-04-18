@@ -1,27 +1,33 @@
+<!--  
+	Jami Schwarzwalder
+	4/17/2016
+	Helpers, Events and Spacebars
+-->
 <head>
   <title>simple</title>
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
+  <div class="container-fluid">
 
-  {{> hello}}
-  {{> info}}
+  {{> navBar}}
+  {{> home}}
+  </div>
 </body>
 
 <template name="navBar">
 	<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">Super Store</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Search</a></li> 
-      <li><a href="#">Cart</a></li> 
-    </ul>
-  </div>
-</nav>
+	  <div class="container-fluid">
+		<div class="navbar-header">
+		  <a class="navbar-brand" href="#">Super Store</a>
+		</div>
+		<ul class="nav navbar-nav">
+		  <li><a href="#">Home</a></li>
+		  <li><a href="#">Search</a></li> 
+		  <li><a href="#">Cart</a></li> 
+		</ul>
+	  </div>
+	</nav>
 </template>
 
 <template name="home">
