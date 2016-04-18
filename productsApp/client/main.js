@@ -93,5 +93,11 @@ Template.products.helpers({
 			return true;
 		}
 		return false;
+	}, 
+	sale: function(){
+		if (this.salesPrice != 0.0){
+			return true;
+		}
+		return false;
 	}
 });

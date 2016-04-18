@@ -55,7 +55,13 @@
 				)
 				</h4>
 				<p>{{this.productDescription}}</p>
-				<p>Price: ${{this.price}}</p>
+				<p>Price: 
+				{{#unless sale}}
+					${{this.price}}
+				{{else}}
+					{{> salePrice}}
+				{{/unless}}	
+				</p>
 				<p>Keywords:  {{#each keyWords}} {{this}}, {{/each}} </p>
 				<button>Buy</button>  
 			</div>
@@ -66,5 +72,9 @@
 		<hr />
 		{{/each}}
 	
+</template>
+
+<template name="salePrice">
+	<span style="text-decoration:line-through">${{this.price}}</span> ${{this.salesPrice}}
 </template>
 
