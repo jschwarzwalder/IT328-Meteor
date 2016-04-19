@@ -76,6 +76,8 @@ var products = [
     },
 ];
 
+var cart = [];
+
 Session.set("product", products);
 
 Template.products.helpers({
@@ -102,6 +104,20 @@ Template.products.helpers({
 	}
 });
 
+Template.products.events({
+  'click button': function(event, template) {
+	  console.log("you hit buy");
+	  console.log(this.productTitle);
+	  if (cart[this.productId] != undefined){
+			cart[this.productId].quantity ++;
+		}
+		else {
+			cart[this.productId] = {product:this, quantity: 1} ;
+		}
+    Session.set("cart", cart);
+  } 
+});
+
 Template.salesItems.helpers({
 	sale: function(){
 		var saleList = [];
@@ -113,5 +129,14 @@ Template.salesItems.helpers({
 			}
 		}
 		return saleList;
+	}
+});
+
+Template.shoppingCart.helpers({
+	cart: function(){
+		return Session.get("cart")
+	},
+	numCartItems: function(){
+		
 	}
 });

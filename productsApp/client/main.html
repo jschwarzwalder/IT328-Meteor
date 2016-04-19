@@ -13,11 +13,12 @@
 		{{> navBar}}
 		{{> home}}
 		<div class="row">
-			<div class="col-md-10">
+			<div class="col-md-9">
 			  {{> products}}
 			</div>
-			<div class="col-md-2">
+			<div class="col-md-3">
 			  {{> salesItems}}
+			  {{> shoppingCart}}
 			</div>
 		</div>
 	</div>
@@ -91,6 +92,17 @@
 		<ul>
 		{{#each sale}}
 			<li>{{this}}</li>
+		{{/each}}
+		</ul>
+
+</template>
+
+<template name="shoppingCart">
+	
+		<h1>Items in cart</h1>
+		<ul>
+		{{#each cart}}
+			<li>{{this.product.productName}} x{{this.quantity}}</li>
 		{{/each}}
 		</ul>
 
