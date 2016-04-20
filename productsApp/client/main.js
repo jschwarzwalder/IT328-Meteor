@@ -107,7 +107,7 @@ Template.products.helpers({
 Template.products.events({
   'click button': function(event, template) {
 	  console.log("you hit buy");
-	  console.log(this.productTitle);
+	  console.log(this.ProductName);
 	  if (cart[this.productId] != undefined){
 			cart[this.productId].quantity ++;
 		}
@@ -136,7 +136,5 @@ Template.shoppingCart.helpers({
 	cart: function(){
 		return Session.get("cart")
 	},
-	numCartItems: function(){
-		
-	}
+	
 });
