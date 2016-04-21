@@ -17,8 +17,16 @@
 			  {{> products}}
 			</div>
 			<div class="col-md-3">
-			  {{> salesItems}}
-			  {{> shoppingCart}}
+				<div class="row">
+				  <div class="col-xs-12">
+					  {{> salesItems}}
+				  </div>
+				</div>
+			  <div class="row">
+				  <div class="col-xs-12">
+					{{> shoppingCart}}
+				  </div>
+			  </div>
 			</div>
 		</div>
 	</div>
@@ -74,7 +82,7 @@
 				<button>Buy</button>  
 			</div>
 			<div class="col-xs-2 col-xs-offest-1 col-md-offest-1 col-md-4 ">
-				<img src="{{image}}" height="100px"/>
+				<img src="{{image}}" height="100px" class="image-responsive"/>
 			</div>
 		</div>
 		<hr />
@@ -83,28 +91,28 @@
 </template>
 
 <template name="salePrice">
-	<span style="text-decoration:line-through">${{this.price}}</span> ${{this.salesPrice}}
+	<span class="strike">${{this.price}}</span> ${{this.salesPrice}}
 </template>
 
-<template name="salesItems">
-	
+<template name="salesItems" >
+	<div class="bordered">
 		<h1>Sales!</h1>
 		<ul>
 		{{#each sale}}
 			<li>{{this}}</li>
 		{{/each}}
 		</ul>
-
+	</div>
 </template>
 
 <template name="shoppingCart">
-	
+	<div class="bordered">
 		<h1>Items in cart</h1>
 		<ul>
 		{{#each cart}}
 			<li>{{this.product.productName}} x{{this.quantity}}</li>
 		{{/each}}
 		</ul>
-
+	</div>
 </template>
 

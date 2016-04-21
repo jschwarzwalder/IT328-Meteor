@@ -1,1 +1,10 @@
 /* CSS declarations go here */
+.strike{
+	text-decoration:line-through;
+}
+
+.bordered{
+	padding: 10px;
+	margin:5px, 2px;
+	outline: 3px solid gray;
+}
