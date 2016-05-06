@@ -1,6 +1,6 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
-import { bookmarkCollection } from '../collections/collections.js';
+import { bookmarksCollection } from '../collections/collections.js';
 //tempoarily holds cache of files form server - miniMongo
 
 import './main.html';
@@ -8,6 +8,6 @@ import './main.html';
 Template.bookmarks.helpers({
 	bookmarksList: function(){
 		//retreve all bookmarks from our collection
-		return bookmarkCollection.find();
+		return bookmarksCollection.find();
 	}
 })
