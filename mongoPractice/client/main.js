@@ -32,7 +32,11 @@ Template.addBookmarkForm.events({
 Template.bookmarksHeading.events({
 	'click button': function(event){
 		if (confirm("Really delete all bookmarks?")) {
-			bookmarksCollection.remove({};)
+			//bookmarksCollection.remove({};)
+			
+			bookmarksCollection.find().forEach(function(bookmark){
+				
+			});
 		}
 	}
 })
