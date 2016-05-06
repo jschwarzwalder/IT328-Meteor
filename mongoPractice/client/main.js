@@ -27,4 +27,12 @@ Template.addBookmarkForm.events({
 			"lastVisited": new Date()
 		})
 	}
+});
+
+Template.bookmarksHeading.events({
+	'click button': function(event){
+		if (confirm("Really delete all bookmarks?")) {
+			bookmarksCollection.remove({};)
+		}
+	}
 })
