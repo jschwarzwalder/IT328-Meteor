@@ -10,4 +10,21 @@ Template.bookmarks.helpers({
 		//retreve all bookmarks from our collection
 		return bookmarksCollection.find();
 	}
+});
+
+Template.addBookmarkForm.events({
+	'submit .addBookmarkForm': function(event){
+		event.preventDefault(); //stop the form from posting back to the same page...
+		
+		//get my form values
+		var name = $('#bookmarkName').val();
+		var url = $('#bookmarkUrl').val();
+		
+		//insert a new document inot our collection
+		bookmarksCollection.insert({
+			"name": name,
+			"url": url,
+			"lastVisited": new Date()
+		})
+	}
 })
