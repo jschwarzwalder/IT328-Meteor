@@ -1,0 +1,42 @@
+<head>
+  <title>Bookmarks Application</title>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row col-md-offset-2 col-md-8">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h1>Welcome to my Bookmarks application!</h1>
+				</div>
+				<div class="panel-body">
+					{{> addBookmarkForm}}
+				</div>
+			</div>
+		</div>
+		
+		<div class="row col-md-offset-2 col-md-8">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					{{> bookmarksHeading}}
+				</div>
+				<div class="panel-body">
+					{{> bookmarks}}
+				</div>
+			</div>
+		</div>
+	</div>
+  
+</body>
+
+<template name="bookmarksHeading">
+  <h3>Bookmark List</h3>
+</template>
+
+<template name="bookmarks">
+  
+</template>
+
+<template name="addBookmarkForm">
+  
+</template>
