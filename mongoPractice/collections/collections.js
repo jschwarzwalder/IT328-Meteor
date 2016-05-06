@@ -26,4 +26,9 @@ export const bookmarksDummyData = [
 		"url": "https://www.youtube.com/playlist?list=PL8dPuuaLjXtPTrc_yg73RghJEOdobAplG",
 		"lastVisited": new Date(2016, 4, 22)
 	},
+	{
+		"name": "Hatoful Boyfriend",
+		"url": "http://store.steampowered.com/app/310080",
+		"lastVisited": new Date()
+	}
 ];
