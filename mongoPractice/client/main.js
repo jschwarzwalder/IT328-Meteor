@@ -35,7 +35,7 @@ Template.bookmarksHeading.events({
 			//bookmarksCollection.remove({};)
 			
 			bookmarksCollection.find().forEach(function(bookmark){
-				
+				bookmarksCollection.remove( {"_id": bookmark._id});
 			});
 		}
 	}
