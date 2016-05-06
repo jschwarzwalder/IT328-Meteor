@@ -1,6 +1,6 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
-import { bookmarkCollection } from '../collection/collections.js';
+import { bookmarkCollection } from '../collections/collections.js';
 //tempoarily holds cache of files form server - miniMongo
 
 import './main.html';

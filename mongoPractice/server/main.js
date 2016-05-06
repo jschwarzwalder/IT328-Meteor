@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
-import { bookmarkCollection } from '../collection/collections.js';
-import { bookmarksDummyData } from '../collection/collections.js';
+import { bookmarkCollection } from '../collections/collections.js';
+import { bookmarksDummyData } from '../collections/collections.js';
 
 Meteor.startup(() => {
 	//remove any database values that are present
