@@ -29,6 +29,6 @@ export const bookmarksDummyData = [
 	{
 		"name": "Hatoful Boyfriend",
 		"url": "http://store.steampowered.com/app/310080",
-		"lastVisited": new Date()
+		"lastVisited": new Date() 
 	}
 ];
