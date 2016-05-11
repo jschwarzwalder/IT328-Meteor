@@ -26,6 +26,17 @@ Accounts.onCreateUser(function(option, user){
 	user.profile = option.profile;
 	
 	//we can add our own data here...
-	user.profile
+	user.profile.userType = 'basic_user'; //admin, guest, basic_user, ...
+	user.profile.address = {
+		'street': "",
+		'city': "",
+		'state': "",
+		'zip': ""
+	};
+	
+	user.profile.siteVisit = 1;
+	
+	return user;
+	
 	
 });
