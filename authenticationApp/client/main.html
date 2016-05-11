@@ -3,20 +3,15 @@
 </head>
 
 <body>
-
-  {{> nav}}
-  <p>
-  {{> loginButtons align="right"}}
-  </p>
+	<div class="container">
+		{{> nav}}
+	</div> <!-- /container -->
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
-</template>
+
 
 <template name="nav">
-      <div class="container">
+      
 
       <!-- Static navbar -->
       <nav class="navbar navbar-default">
@@ -54,7 +49,9 @@
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
+</template>
 
+<template name="main">
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
         <h1>Navbar example</h1>
@@ -64,5 +61,5 @@
         </p>
       </div>
 
-    </div> <!-- /container -->
+    
 </template>
