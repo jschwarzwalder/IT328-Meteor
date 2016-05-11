@@ -13,6 +13,9 @@ Accounts.ui.config({
 
 Template.content.helpers({
 	"isAdmin": function(){
-		return Meteor.user().profile.userType == "admin";
+		return Meteor.user() !null && Meteor.user().profile.userType == "admin";
+	},
+	"isLoggedIn": function(){
+		return Meteor.user() != null;
 	}
 })

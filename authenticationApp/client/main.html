@@ -6,6 +6,16 @@
 	<div class="container">
 		{{> nav}}
 	</div> <!-- /container -->
+	
+	{{#unless isLoggedIn}}
+		Please log in above...
+	{{else}}
+		{{#if isAdmin}}
+			Super Secrete admin Stuff
+		{{else}}
+			Regular content...
+		{{/if}}
+	{{/unless}}
 </body>
 
 
