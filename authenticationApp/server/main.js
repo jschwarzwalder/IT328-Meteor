@@ -16,3 +16,16 @@ Meteor.publish('userData', function(){
 		//wait for someone to ask a question //ie done and return nothing.
 	}
 });
+
+//hook to respond to user account creation
+Accounts.onCreateUser(function(option, user){
+	//option -- sent from your login provider...
+	//user -- userObject passed in
+	
+	//assign you profile
+	user.profile = option.profile;
+	
+	//we can add our own data here...
+	user.profile
+	
+});
