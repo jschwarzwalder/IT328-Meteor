@@ -1,0 +1,11 @@
+to add an admin
+create an account
+then you'll need to update their userType
+open a new console window
+navigate to your folder of your project
+
+
+type in meteor mongo
+pretty()
+
+db.users.update({"_id": "idsdlkjsd;fkljlkjfs"}, {"$set":{profile.userType": "admin"}})
