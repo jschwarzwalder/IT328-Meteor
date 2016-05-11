@@ -10,3 +10,9 @@ userData = new Mongo.Collection('userData');
 Accounts.ui.config({
 	passwordSignupFields: 'USERNAME_AND_EMAIL'
 });
+
+Template.content.helpers({
+	"isAdmin": function(){
+		return Meteor.user().profile.userType == "admin";
+	}
+})
