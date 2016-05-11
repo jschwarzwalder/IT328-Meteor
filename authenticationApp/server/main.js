@@ -12,6 +12,7 @@ Meteor.publish('userData', function(){
 		
 		return Meteor.users.find({'_id': this.userId})
 	} else {
-		
+		this.ready();
+		//wait for someone to ask a question //ie done and return nothing.
 	}
 });
