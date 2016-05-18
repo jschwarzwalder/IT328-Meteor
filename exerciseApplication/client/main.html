@@ -1,0 +1,121 @@
+<head>
+  <title>Exercise Tracker</title>
+</head>
+
+<body>
+  {{> navigation }}
+  {{> jumbotron }}
+  {{> content }}
+</body>
+
+<template name="content">
+  <div class="container">
+    <div class="row">
+      {{> newActivity}}
+      {{> viewActivities}}
+    </div>
+    <div class="row">
+      {{> editActivity}}
+    </div>
+  </div>
+</template>
+
+<template name="newActivity">
+  <div class="col-lg-6">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        Add Activity
+      </div>
+      <div class="panel-body">
+        <form id="enterActivity">
+          <select id="activityType" class="form-control">
+            <option>Running</option>
+            <option>Weight Lifting</option>
+            <option>Swimming</option>
+          </select>
+          <input type="text" id="activityDescription" placeholder="description..."
+                 class="form-control">
+          <input type="text" id="activityHours" placeholder="hours..."
+                 class="form-control">
+          <input type="submit" value="Add Activity" class="form-control btn btn-primary">
+        </form>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="viewActivities">
+  <div class="col-lg-6">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        Activities
+      </div>
+      <div class="panel-body">
+        <ul class="list-group">
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="editActivity">
+  <div class="col-lg-offset-6 col-lg-6">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        Edit Activity
+      </div>
+      <div class="panel-body">
+        <form id="editActivity">
+          <select id="editActivityType" class="form-control">
+            <option>Running</option>
+            <option>Weight Lifting</option>
+            <option>Swimming</option>
+          </select>
+          <input type="text" id="editActivityDescription" placeholder="description..."
+                 class="form-control" value="">
+          <input type="text" id="editActivityHours" placeholder="hours..."
+                 class="form-control" value="">
+          <input type="submit" value="Edit Activity" class="form-control btn btn-primary">
+        </form>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="navigation">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Exercise Application</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right">
+            <div class="form-group">
+              <input type="text" placeholder="Email" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Sign in</button>
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+</template>
+
+<template name="jumbotron">
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    <div class="container">
+      <h1>Exercise Application</h1>
+      <p>Track your activities, diet and steps taken with this easy to use application!</p>
+    </div>
+  </div>
+</template>
