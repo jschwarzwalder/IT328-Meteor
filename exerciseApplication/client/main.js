@@ -34,4 +34,13 @@ Template.viewActivities.helpers({
 	getAllActivities: function(){
 		return activityCollection.find();
 	}
-})
+});
+
+Template.viewActivities.events({
+	'click a.delete': function(event){
+		event.preventDefault();
+		
+		var _id = $(event.target).data('id');
+		
+	}
+});
