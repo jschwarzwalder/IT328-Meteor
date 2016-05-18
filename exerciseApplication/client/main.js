@@ -1,7 +1,10 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
+import { activityCollection } from '../collections/collections.js';
 
 import './main.html';
+
+Meteor.subscribe('activities');
 
 //event map for add activity form
 Template.newActivity.events ({

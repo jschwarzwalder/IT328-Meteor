@@ -18,3 +18,9 @@ Meteor.methods ({
 		
 	}
 });
+
+//publish data from the server for queries on the client side
+Meteor.publish('activities', function(){
+	//return all documents in the activities collection
+	return activityCollection.find();
+});
