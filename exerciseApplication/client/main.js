@@ -48,5 +48,15 @@ Template.viewActivities.events({
 		Meteor.call('activityDelete', _id);
 		
 		
-	}
+	}, 'click a.edit': function(event){
+		
+		//stop the link from refreshing the page, and get the activity id!
+		event.preventDefault();
+		
+		var _id = $(event.target).data('id');
+		
+		//retrieve the activity from the server side and save to session
+		var activity = Meteor.call('getSingleActivty', _id);
+	}, 
+	
 });

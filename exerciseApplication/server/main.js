@@ -12,10 +12,13 @@ Meteor.methods ({
 		activityCollection.insert(activity);
 	}, 
 	activityDelete: function(_id){
-	activityCollection.remove({"_id": _id});
+		activityCollection.remove({"_id": _id});
 	},
 	activityUpdate: function(updatedActivity){
-		
+		activityCollection.
+	},
+	getSingleActivity: function(_id){
+		return activityCollection.findOne({"_id": _id});
 	}
 });
 
