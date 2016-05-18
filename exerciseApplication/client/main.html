@@ -53,12 +53,13 @@
       <div class="panel-body">
         <ul class="list-group">
           {{#each getAllActivities}}
-			<li class="list-group-item">
-				<strong> {{type}}</strong>: {{description}} ({{hours}} hours)
-				<a href="" data-id="{{_id}}" class="pull-right delete">Delete</a> 				
-				<a href="" data-id="{{_id}}" class="pull-right edit">Edit</a>
-			</li>
-			{{/each}}
+            <li class="list-group-item"><strong>{{type}}</strong>: 
+              {{description}} ({{hours}} hours)
+              <a href="" data-id="{{_id}}" class="pull-right delete">Delete</a>
+              <a href="" data-id="{{_id}}" class="pull-right edit">Edit</a>
+              <div class="updated">{{prettyDate updatedOn}}</div>
+            </li>
+          {{/each}}
         </ul>
       </div>
     </div>
@@ -74,14 +75,14 @@
       <div class="panel-body">
         <form id="editActivity">
           <select id="editActivityType" class="form-control">
-            <option {{getSelected "Running"}}>Running</option>
-            <option {{getSelected "Weight Lifting"}}>Weight Lifting</option>
-            <option {{getSelected "Swimming"}}>Swimming</option>
+            <option {{getType "Running"}}>Running</option>
+            <option {{getType "Weight Lifting"}}>Weight Lifting</option>
+            <option {{getType "Swimming"}}>Swimming</option>
           </select>
           <input type="text" id="editActivityDescription" placeholder="description..."
-                 class="form-control" value="{{getEditedActivity.description}}">
+                 class="form-control" value="{{getEditedRecord.description}}">
           <input type="text" id="editActivityHours" placeholder="hours..."
-                 class="form-control" value="{{getEditedActivity.hours}}">
+                 class="form-control" value="{{getEditedRecord.hours}}">
           <input type="submit" value="Edit Activity" class="form-control btn btn-primary">
         </form>
       </div>
