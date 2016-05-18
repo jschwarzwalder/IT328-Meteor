@@ -12,7 +12,7 @@ Meteor.methods ({
 		activityCollection.insert(activity);
 	}, 
 	activityDelete: function(_id){
-		
+	activityCollection.remove({"_id": _id});
 	},
 	activityUpdate: function(updatedActivity){
 		

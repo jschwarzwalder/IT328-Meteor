@@ -38,9 +38,15 @@ Template.viewActivities.helpers({
 
 Template.viewActivities.events({
 	'click a.delete': function(event){
+		
+		//stop the link from refreshing the page, and get the activity id!
 		event.preventDefault();
 		
 		var _id = $(event.target).data('id');
+		
+		//delete the activity
+		Meteor.call('activityDelete', _id);
+		
 		
 	}
 });
