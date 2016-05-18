@@ -61,7 +61,7 @@ Template.viewActivities.events({
 		var activity = Meteor.call('getSingleActivty', _id, function(error, result){
 			Session.set('editedActivity', result);
 			
-		};
+		}
 	}, 
 	
 });
@@ -81,7 +81,30 @@ Template.editActivity.helpers({
 		if (editedActivity != undefined) {
 			return editedActivity.type == possibleType ? 'selected' : '';
 		} else {
+			return '';
+		}
+	}
+})
+
+Template.editActivity.events({
+	'submit #editActivity': function(event){
+		event.preventDefault();
+		
+		var editedActivity = Session.get('editedActivity');
+		if (editedActivity != undefined)
+		{
+			//retrieve new values
+			var newType = $('#editedActivityType').val();
+			var newDescription = $('#editedActivityDescription').val();
+			var newHours = $('#editedActivityHours').val();
 			
+			//assign my new values
+			editedActivity.type = newType;
+			editedActivity.description = newDescription;
+			editedActivity.hours = newHours;
+			
+			//send my new document 
+			Meteor.call('activityUpdate', editedActivity);
 		}
 	}
 })
