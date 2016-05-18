@@ -74,14 +74,14 @@
       <div class="panel-body">
         <form id="editActivity">
           <select id="editActivityType" class="form-control">
-            <option>Running</option>
-            <option>Weight Lifting</option>
-            <option>Swimming</option>
+            <option {{getSelected "Running"}}>Running</option>
+            <option {{getSelected "Weight Lifting"}}>Weight Lifting</option>
+            <option {{getSelected "Swimming"}}>Swimming</option>
           </select>
           <input type="text" id="editActivityDescription" placeholder="description..."
-                 class="form-control" value="">
+                 class="form-control" value="{{getEditedActivity.description}}">
           <input type="text" id="editActivityHours" placeholder="hours..."
-                 class="form-control" value="">
+                 class="form-control" value="{{getEditedActivity.hours}}">
           <input type="submit" value="Edit Activity" class="form-control btn btn-primary">
         </form>
       </div>

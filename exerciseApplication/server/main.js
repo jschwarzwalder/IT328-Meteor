@@ -15,7 +15,7 @@ Meteor.methods ({
 		activityCollection.remove({"_id": _id});
 	},
 	activityUpdate: function(updatedActivity){
-		activityCollection.
+		
 	},
 	getSingleActivity: function(_id){
 		return activityCollection.findOne({"_id": _id});

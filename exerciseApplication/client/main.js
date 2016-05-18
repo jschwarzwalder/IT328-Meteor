@@ -56,7 +56,32 @@ Template.viewActivities.events({
 		var _id = $(event.target).data('id');
 		
 		//retrieve the activity from the server side and save to session
-		var activity = Meteor.call('getSingleActivty', _id);
+		
+		//I"m using an "annonymous function"as a "callback" here
+		var activity = Meteor.call('getSingleActivty', _id, function(error, result){
+			Session.set('editedActivity', result);
+			
+		};
 	}, 
 	
 });
+//helpers for view all activities
+Template.viewActivities.helpers ({
+	getAllActivities: function(){
+		return activtyCollection.find();
+	}
+})
+
+Template.editActivity.helpers({
+	getEditedActivity: function(){
+		return Session.get('editedActivity');
+	}, 
+	getSelected: function(possibleType) {
+		var editedActivity = Session.get('editedActivity');
+		if (editedActivity != undefined) {
+			return editedActivity.type == possibleType ? 'selected' : '';
+		} else {
+			
+		}
+	}
+})
