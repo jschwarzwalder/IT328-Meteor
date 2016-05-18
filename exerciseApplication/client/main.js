@@ -3,6 +3,7 @@ import { ReactiveVar } from 'meteor/reactive-var';
 
 import './main.html';
 
+//event map for add activity form
 Template.newActivity.events ({
 	'submit #enterActivity': function(event){
 		//stop the form from submitting
@@ -13,6 +14,21 @@ Template.newActivity.events ({
 			"type": $('#activityType').val(), 
 			"description": $('#activityDescription').val(), 
 			"hours": $('#activityHours').val()
-		}
+		};
+		
+		//call(method, inputs)
+		Meteor.call('activityInsert',newDocument);
+		
+		//empty out text boxes ie clear the form
+		$('activityDescription').val('');
+		$('activityHours').val('');
+	}
+})
+
+
+//helpers for view all activities
+Template.viewActivities.helpers({
+	getAllActivities: function(){
+		return activityCollection.find();
 	}
 })
