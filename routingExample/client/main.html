@@ -23,6 +23,13 @@
 
   <div class="container">
     <h3>View all products</h3>
+	
+	<ul class="list-group">
+		{{#each products}}
+		<li class="list-group-item">
+			<a href="#">{{name}}</a>
+		</li>
+		{{/each}}
 
   </div>
 </template>
