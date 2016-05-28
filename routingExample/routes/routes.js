@@ -5,6 +5,6 @@ Router.route('/', function(){
 	this.render('productList');//view productList template
 });
 
-Router.route('/viewProduct', function(){
+Router.route('/viewProduct/:_id', function(){
 	this.render('viewProduct');//view viewProduct template
 });
