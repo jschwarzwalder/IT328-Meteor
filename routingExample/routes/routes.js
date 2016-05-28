@@ -13,3 +13,7 @@ Router.route('/viewProduct/:_id', function(){
 		}
 	});//view viewProduct template
 });
+
+Router.route('/login', function(){
+	this.render('login');//view login template
+});
