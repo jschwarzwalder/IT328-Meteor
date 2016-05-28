@@ -2,24 +2,90 @@
   <title>simple</title>
 </head>
 
-<body>
-  <h1>Welcome to Meteor!</h1>
-
-  {{> hello}}
-  {{> info}}
-</body>
-
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="navigation">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">WebSiteName</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/">Home</a></li>
+      </ul>
+    </div>
+  </nav>
 </template>
 
-<template name="info">
-  <h2>Learn Meteor!</h2>
-  <ul>
-    <li><a href="https://www.meteor.com/try">Do the Tutorial</a></li>
-    <li><a href="http://guide.meteor.com">Follow the Guide</a></li>
-    <li><a href="https://docs.meteor.com">Read the Docs</a></li>
-    <li><a href="https://forums.meteor.com">Discussions</a></li>
-  </ul>
+<template name="productList">
+  {{> navigation }}
+
+  <div class="container">
+    <h3>View all products</h3>
+
+  </div>
 </template>
+
+<template name="viewProduct">
+  {{> navigation }}
+
+  <div class="container">
+    <h3>View single product</h3>
+
+  </div>
+</template>
+
+<template name="login">
+  {{> navigation }}
+
+  <div class="container">
+    <h3>Please login </h3>
+  </div>
+</template>
+
+<template name="addProduct">
+  {{> navigation }}
+
+  <div class="container">
+    <h3>Please login </h3>
+    <form id="addProductForm" class="col-lg-6">
+      <div class="from-group">
+        <input type="text" name="name" class="form-control" placeholder="name">
+        <input type="text" name="price" class="form-control" placeholder="price">
+        <textarea name="description" class="form-control" placeholder="description"></textarea>
+        <input type="submit" class="btn btn-primary">
+      </div>
+    </form>
+  </div>
+</template>
+
+<template name="editProduct">
+  {{> navigation }}
+
+  <div class="container">
+    <h3>Please login </h3>
+    <form id="editProductForm" class="col-lg-6">
+      <div class="from-group">
+        <input type="text" name="name" class="form-control" placeholder="name">
+        <input type="text" name="price" class="form-control" placeholder="price">
+        <textarea name="description" class="form-control" placeholder="description"></textarea>
+        <input type="submit" class="btn btn-primary">
+      </div>
+    </form>
+  </div>
+</template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
