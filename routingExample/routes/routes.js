@@ -11,5 +11,5 @@ Router.route('/viewProduct/:_id', function(){
 			//gather data for the view product template
 			return productsCollection.findOne({"_id": this.params._id});
 		}
-	);//view viewProduct template
+	});//view viewProduct template
 });
