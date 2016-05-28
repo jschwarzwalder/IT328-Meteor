@@ -50,9 +50,9 @@ Meteor.methods({
 		});
 		
 		productsCollection.insert ( {
-			name: 'Clean Bright Soap',
-			price: 1.99, 
-			description: 'Another work day required clean bright soap!'
+			name: 'Sargento Snack Pack',
+			price: 6.99, 
+			description: 'Cranberries, Almonds, and White Cheddar'
 		});
 	}
 })
