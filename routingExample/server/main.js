@@ -2,7 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { productsCollection } from '../collections/collections.js';
 
 Meteor.startup(() => {
-	Meteor.call('addDummyData');
+	//Meteor.call('addDummyData');
 });
 
 Meteor.methods({
@@ -24,5 +24,5 @@ Meteor.methods({
 })
 
 Meteor.publish('allProducts', function(){
-	return.productsCollection.find();
+	return productsCollection.find();
 });
