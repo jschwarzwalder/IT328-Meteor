@@ -6,5 +6,10 @@ Router.route('/', function(){
 });
 
 Router.route('/viewProduct/:_id', function(){
-	this.render('viewProduct');//view viewProduct template
+	this.render('viewProduct', {
+		data:function() {
+			//gather data for the view product template
+			return productsCollection.findOne({"_id": this.params._id});
+		}
+	);//view viewProduct template
 });
