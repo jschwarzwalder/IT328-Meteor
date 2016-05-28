@@ -2,7 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { productsCollection } from '../collections/collections.js';
 
 Meteor.startup(() => {
-	//Meteor.call('addDummyData');
+	Meteor.call('addDummyData');
 });
 
 Meteor.methods({
@@ -53,6 +53,7 @@ Meteor.methods({
 			name: 'Sargento Snack Pack',
 			price: 6.99, 
 			description: 'Cranberries, Almonds, and White Cheddar'
+
 		});
 	}
 })
