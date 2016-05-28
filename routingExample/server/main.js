@@ -58,5 +58,5 @@ Meteor.methods({
 })
 
 Meteor.publish('allProducts', function(){
-	return productsCollection.find();
+	return.productsCollection.find();
 });
