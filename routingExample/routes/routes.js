@@ -25,5 +25,7 @@ Router.onBeforeAction(function(){
 		this.redirect('/login');
 	} else {
 		this.next(); //tells the rounter to continue with its business
+	}, { 
+		except: ['login']
 	}
-});
+);
