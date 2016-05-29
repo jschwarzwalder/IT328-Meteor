@@ -1,0 +1,12 @@
+
+What is iron router?
+A meteor package that allows us to specify when and where to load templates. Using a routes.js document we can create links that resmble URL links that will display a template.
+
+What are the advantages of using routing in a web application?
+easier maintanece of code 
+Site is easier to understand for search engines.
+Creates the functionality that users expect a website without needing to create folders and seperate files for each "page" or view we need.
+
+Explain the benefits of associating a data context with a route using iron router.
+
+This is pulling data objects from Collections and displaying them in HTML when rendered. 
