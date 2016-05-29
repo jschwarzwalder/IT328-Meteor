@@ -19,12 +19,14 @@ Template.addProduct.events({
 		//stop the form from refreshing the page
 		event.preventDefault();
 		
-		//insert a new record
+		//insert a new record (asynchronously)
 		Metor.call('productInsert', {
 			name: $('input[name="name"]').val(),
 			price: $('input[name="price"]').val(),
-			description $('textarea[name="description"]').val()
-		})
+			description: $('textarea[name="description"]').val()
+		}, function(error, result) {
+			Router.go('/viewProduct/' + result);
+		});
 	}
 	
 });
