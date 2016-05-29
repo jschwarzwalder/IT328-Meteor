@@ -22,6 +22,15 @@ Router.route('/addProduct', function(){
 	this.render('addProduct');//view login template
 });
 
+Router.route('/editProduct/:_id', function(){
+	this.render('editProduct', {
+		data: function(){
+			//gather data for the view product template
+			return productsCollection.findOne({'_id': this.params._id});
+		}
+	});//view login template
+});
+
 //use a hook to prevent unauthorized acces to templates with data
 Router.onBeforeAction(function(){
 	//make sure the user is logged in
@@ -29,7 +38,8 @@ Router.onBeforeAction(function(){
 		this.redirect('/login');
 	} else {
 		this.next(); //tells the rounter to continue with its business
-	}, { 
+	}
+}, { 
 		except: ['login']
 	}
 );
