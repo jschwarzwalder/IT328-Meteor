@@ -12,4 +12,19 @@ Template.productList.helpers({
 	products: function(){
 		return productsCollection.find();
 	}
-})
+});
+
+Template.addProduct.events({
+	'submit #addProductForm': function(event) {
+		//stop the form from refreshing the page
+		event.preventDefault();
+		
+		//insert a new record
+		Metor.call('productInsert', {
+			name: $('input[name="name"]').val(),
+			price: $('input[name="price"]').val(),
+			description $('textarea[name="description"]').val()
+		})
+	}
+	
+});
