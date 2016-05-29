@@ -17,3 +17,13 @@ Router.route('/viewProduct/:_id', function(){
 Router.route('/login', function(){
 	this.render('login');//view login template
 });
+
+//use a hook to prevent unauthorized acces to templates with data
+Router.onBeforeAction(function(){
+	//make sure the user is logged in
+	if (!Meteor.user() && !Meteor.loggingIn() ){
+		this.redirect('/login');
+	} else {
+		this.next(); //tells the rounter to continue with its business
+	}
+});
