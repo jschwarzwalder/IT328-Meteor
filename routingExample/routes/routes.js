@@ -28,7 +28,15 @@ Router.route('/editProduct/:_id', function(){
 			//gather data for the view product template
 			return productsCollection.findOne({'_id': this.params._id});
 		}
-	});//view login template
+	});
+});
+
+Router.route('/deleteProduct/:_id', function(){
+	//delete the document
+	Meteor.call('productDelete', this.params._id), function (error, result){
+		Router.go('/');
+	}
+	
 });
 
 //use a hook to prevent unauthorized acces to templates with data
