@@ -18,6 +18,10 @@ Router.route('/login', function(){
 	this.render('login');//view login template
 });
 
+Router.route('/addProduct', function(){
+	this.render('addProduct');//view login template
+});
+
 //use a hook to prevent unauthorized acces to templates with data
 Router.onBeforeAction(function(){
 	//make sure the user is logged in
