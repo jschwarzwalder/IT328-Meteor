@@ -30,3 +30,25 @@ Template.addProduct.events({
 	}
 	
 });
+
+
+Template.editProduct.events({
+	'submit #editProductForm': function(event) {
+		//stop the form from refreshing the page
+		event.preventDefault();
+		
+		//get my data context (product)
+		var product = this;
+		
+		//get updated values from our form
+		product.name = $('input[name="name"]').val();
+		product.price = $('input[name="price"]').val();
+		product.description = $('textarea[name="description"]').val();
+		
+		//save the updates to the server side database
+		Meteor.call('productUpdate', product, function(error, result){
+			//redirect to see the updated record
+			Router.go('/viewProduct/' + product._id);
+		});
+	}
+})
