@@ -1,0 +1,86 @@
+<head>
+  <title>Card Game</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Welcome to My Card Game!</h1>
+    {{> loginButtons}}
+    <br><br>
+
+    <div class="col-lg-6">
+      {{> game}}
+    </div>
+    <div class="col-lg-6">
+      {{> matches}}
+    </div>
+  </div>
+</body>
+
+<template name="game">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3>Game</h3>
+    </div>
+    <div class="panel-body">
+      {{#if matchReady}}
+        <div class="col-lg-6">
+          <img src="{{playerCards 1}}" id="player1">
+          <h3>{{match.user1.username}}</h3>
+        </div>
+        <div class="col-lg-6">
+          <img src="{{playerCards 2}}" id="player2">
+          <h3>{{match.user2.username}}</h3>
+        </div>
+      {{/if}}
+    </div>
+  </div>
+</template>
+
+<template name="matches">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3>Current Matches</h3>
+    </div>
+    <div class="panel-body">
+      {{#if loggedIn}}
+        <form id="newMatchForm">
+          <input type="text" id="matchName" placeholder="Match Name..." class="form-control">
+          <button type="button" class="form-control btn btn-info">+</button>
+        </form>
+
+        <div class="matchGroup">
+          {{#each allMatches}}
+            <div>
+              {{name}} - {{getMatchPlayers this}} 
+              <!-- cannot join a match you are already part of -->
+              {{#unless playerInMatch this}}
+                {{#unless matchFull this}}
+                  <a class="joinMatch" data-id="{{_id}}" href="#">Join</a>
+                {{else}}
+                  (Match Full)
+                {{/unless}}
+              {{else}}
+                (Your Match)
+              {{/unless}}
+            </div>
+          {{/each}}
+        </div>
+      {{/if}}
+    </div>
+  </div>
+</template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,11 @@
+input[type="text"] {
+	margin-bottom: 6px;
+}
+
+div.matchGroup {
+	margin-top: 10px;
+}
+
+img#player1, img#player2 {
+	width: 200px;
+}
